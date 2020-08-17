@@ -12,6 +12,7 @@ import sys
 import os
 import glob
 import unittest
+import subprocess
 import importlib
 from contextlib import redirect_stdout
 from io import StringIO
@@ -103,6 +104,15 @@ class TestBabynames(unittest.TestCase):
             actual_list = list(filter(None, actual_list))
             # This will perform element-by-element comparison.
             self.assertListEqual(actual_list, expected_list)
+
+    def test_flake8(self):
+        """Checking for PEP8/flake8 compliance"""
+        result = subprocess.run(['flake8', self.module.__file__])
+        self.assertEqual(result.returncode, 0)
+
+    def test_author_string(self):
+        """Checking for __author__ string"""
+        self.assertNotEqual(self.module.__author__, '???')
 
 
 if __name__ == '__main__':
