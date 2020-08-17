@@ -1,4 +1,4 @@
-<img src="https://image.flaticon.com/icons/svg/104/104985.svg" height="120px"/>
+<img src="img/sad_baby.png" height="120px"/>
 
 Baby Names 
 ------------
