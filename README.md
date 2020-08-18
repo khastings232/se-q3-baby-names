@@ -65,30 +65,19 @@ $ grep 'Emily ' *.summary
 - year:  `r'Popularity\sin\s(\d\d\d\d)`
 - names: `r'<td>(\d+)</td><td>(\w+)</td><td>(\w+)</td>'`
 
-## Testing your code
-Use the VS Code debugger for this assignment &mdash; the debugger is your primary tool as a developer. Have you heard of a carpenter that doesn't know how to use his own hammer? Would you hire that guy? If you need help on this assessment, *be sure you are able to run it in the debugger before asking for help from a coach*.
 
-This assignment contains a `tests` folder that will test your code in several different ways. Make sure you are passing all the tests before you submit your work! There are a couple of ways to test.
- - From the command line:
-   `$ python -m unittest discover`
- - Using the built-in TDD framework of VS Code. Read [this article](https://code.visualstudio.com/docs/python/testing) and understand how to enable the framework in your VS Code IDE. Once the framework is enabled, you can run and debug any of the tests individually.
- ![Babynames Test](img/vscode-test.png)
- To view the detailed results of the test output, select the OUTPUT tab in your integrated terminal window, and then choose "Python Test Log" in the dropdown.
- ![Test Output](img/vscode-output.png)
- - You may encounter this error message during testing:
-    ```self.assertListEqual(output, baby1990_list)
-    AssertionError: Lists differ: ['1990', 'Aaron 34', 'Abbey 48... != ['1990', 'Aaron 34', 'Abbey 48...
-    First differing element 14:
-    'Adrian 603'
-    'Adrian 94'
-    ```
-    This means that you are not handling duplicate names correctly &mdash; keep the rank of the first name that you encounter during parsing. If you see a duplicate name with a different rank, don't add it to your dictionary of names and ranks.  
+## Testing with Unittest
+This assignment has separate unit tests to help you during development. The unit tests are located in the `tests` folder; you should not modify these.  Make sure all unit tests are passing before you submit your solution. You can invoke the unit tests from the command line at the root of your project folder:
+```console
+$ python -m unittest discover tests
+```
+You can also run and debug these same tests using the `Test Explorer` extension built in to the VSCode editor, by enabling automatic test discovery.  This is a really useful tool and we highly recommend to learn it.
 
-## PR (Pull Request) Workflow for this assignment
-1. *Fork* this repository into your own personal GitHub account.
-2. *Clone* your own repo to your local development machine.
-3. Create a separate branch named `dev` and checkout the branch.
-5. Commit your changes, then `git push` the branch back to your own GitHub account.
-5. From your own GitHub repo, create a pull request (PR) *from your `dev` branch back to **your own** master*.
-6. Copy/Paste the URL **link to your PR** as your assignment submission.
-7. Your grader will post code review comments inline within your pull request in your GitHub account. Be sure to respond to any comments and make requested changes. **RESUBMIT** a new link to your PR after making changes. This is the code review iteration cycle.
+https://code.visualstudio.com/docs/python/testing#_test-discovery
+
+- Test framework is `unittest`
+- Test folder pattern is `tests`
+- Test name pattern is `test*`
+
+## Submitting your work
+To submit your solution for grading, you will need to create a github [Pull Request (PR)](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests).  Refer to the `PR Workflow` article in your course content for details.
