@@ -1,13 +1,12 @@
 <img src="img/sad_baby.png" height="120px"/>
 
-Baby Names 
-------------
+# Baby Names 
 
 The Social Security administration has this neat data of which names are most popular for babies born each year in the USA (see [social security baby names](http://www.socialsecurity.gov/OACT/babynames/)). The files `baby1990.html`, `baby1992.html`, ... contain raw HTML, similar to what you get when visiting the above social security site. Take a look at the HTML and think about how you might scrape the data out of it.
 
 You will need to add your own code to [babynames.py](./babynames.py) to complete this assignment.
 
-Part A
+## Part A
 ------
 
 In the [babynames.py](./babynames.py) file, implement the `extract_names(filename)` function, which takes the filename of a single `babyXXXX.html` file and returns the data from the file as a single list &mdash; the year string at the start of the list, followed by the name-rank strings in alphabetical order. Make sure the returned list is a pure python list, not a 'stringified' version of the list.
@@ -44,7 +43,7 @@ Abbie 650
 ...
 ```
 
-Part B
+## Part B
 ------
 
 Suppose instead of printing the text, we want to write files containing the text. If the flag `--summaryfile` is present on the command line, do the following: for each input file `babyXXXX.html`, instead of printing, write a new file `babyXXXX.html.summary` that contains the summary text for that file.
